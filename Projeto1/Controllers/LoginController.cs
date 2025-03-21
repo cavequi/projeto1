@@ -21,8 +21,8 @@ namespace Projeto1.Controllers
         [HttpPost]
         public IActionResult Login(string email, string senha)
         {
-            var usuario = UsuarioRepositorio.ObterUsuario(email);
-            if (usuario != null && usuario.Senha = senha)
+            var usuario = _usuarioRepositorio.ObterUsuario(email);
+            if (usuario != null && usuario.Senha == senha)
             {
                 //Autenticação bem-sucedida
                 return RedirectToAction("Index", "Home");
